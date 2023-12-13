@@ -1,0 +1,310 @@
+API-1-POST-http://127.0.0.1:8000/v1/create-a-record/:
+
+Input-1:
+{
+    "event": 1,
+    "job_position": 1,
+    "recruiter_alert": "Example Recruiter Alert",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@example.com",
+    "persona": 1,
+    "role": 1,
+    "screening_mode": 1,
+    "dob": "1990-01-01",
+    "gender": 1,
+    "marital_status": 1,
+    "contact_no_primary": 1234567890,
+    "contact_no_alternate": 9876543210,
+    "referred_by": 1,
+    "referred_by_other": "Someone",
+    "address_line": "123 Main St",
+    "city": 1,
+    "pincode": 123456,
+    "experience_level": 1,
+    "education_level": 1,
+    "notice_period": "30 days",
+    "reason_for_change": 1,
+    "photo_path": "path/to/photo.jpg",
+    "resume_path": "path/to/resume.pdf",
+    "login_time": "2023-12-14T10:00:00",
+    "logout_time": "2023-12-14T18:00:00",
+    "ip_address": "192.168.0.1",
+    "geo_location": "Location",
+    "created_date": "2023-12-14T08:00:00",
+    "created_by": 1,
+    "modified_date": "2023-12-14T08:30:00",
+    "modified_by": 1,
+    "status": 1
+}
+
+    output-1
+    {
+    "id": 2,
+    "recruiter_alert": "Example Recruiter Alert",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@example.com",
+    "role": 1,
+    "dob": "1990-01-01",
+    "contact_no_primary": "1234567890",
+    "contact_no_alternate": "9876543210",
+    "referred_by_other": "Someone",
+    "address_line": "123 Main St",
+    "pincode": "123456",
+    "notice_period": "30 days",
+    "photo_path": "path/to/photo.jpg",
+    "resume_path": "path/to/resume.pdf",
+    "login_time": "2023-12-14T10:00:00Z",
+    "logout_time": "2023-12-14T18:00:00Z",
+    "ip_address": "192.168.0.1",
+    "geo_location": "Location",
+    "created_date": "2023-12-14T08:00:00Z",
+    "created_by": 1,
+    "modified_date": "2023-12-14T08:30:00Z",
+    "modified_by": 1,
+    "status": 1,
+    "event": 1,
+    "job_position": 1,
+    "persona": 1,
+    "screening_mode": 1,
+    "gender": 1,
+    "marital_status": 1,
+    "referred_by": 1,
+    "city": 1,
+    "experience_level": 1,
+    "education_level": 1,
+    "reason_for_change": 1
+}
+
+Input-2
+    If it is same as above
+    {
+    "event": 1,
+    "job_position": 1,
+    "recruiter_alert": "Example Recruiter Alert",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@example.com",
+    "persona": 1,
+    "role": 1,
+    "screening_mode": 1,
+    "dob": "1990-01-01",
+    "gender": 1,
+    "marital_status": 1,
+    "contact_no_primary": 1234567890,
+    "contact_no_alternate": 9876543210,
+    "referred_by": 1,
+    "referred_by_other": "Someone",
+    "address_line": "123 Main St",
+    "city": 1,
+    "pincode": 123456,
+    "experience_level": 1,
+    "education_level": 1,
+    "notice_period": "30 days",
+    "reason_for_change": 1,
+    "photo_path": "path/to/photo.jpg",
+    "resume_path": "path/to/resume.pdf",
+    "login_time": "2023-12-14T10:00:00",
+    "logout_time": "2023-12-14T18:00:00",
+    "ip_address": "192.168.0.1",
+    "geo_location": "Location",
+    "created_date": "2023-12-14T08:00:00",
+    "created_by": 1,
+    "modified_date": "2023-12-14T08:30:00",
+    "modified_by": 1,
+    "status": 1
+}
+    Output-2
+    {
+    "status": false,
+    "Message": "create record failed!('UNIQUE constraint failed: CandidateDirectory.first_name, CandidateDirectory.last_name',)"
+    }
+
+
+API-2-GET-http://localhost:8000/v1/candidates-update/2/
+    It will give all pk-2 record
+    Output-1
+        {
+    "id": 2,
+    "recruiter_alert": "Example Recruiter Alert",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@example.com",
+    "role": 1,
+    "dob": "1990-01-01",
+    "contact_no_primary": "1234567890",
+    "contact_no_alternate": "9876543210",
+    "referred_by_other": "Someone",
+    "address_line": "123 Main St",
+    "pincode": "123456",
+    "notice_period": "30 days",
+    "photo_path": "path/to/photo.jpg",
+    "resume_path": "path/to/resume.pdf",
+    "login_time": "2023-12-14T10:00:00Z",
+    "logout_time": "2023-12-14T18:00:00Z",
+    "ip_address": "192.168.0.1",
+    "geo_location": "Location",
+    "created_date": "2023-12-14T08:00:00Z",
+    "created_by": 1,
+    "modified_date": "2023-12-14T08:30:00Z",
+    "modified_by": 1,
+    "status": 1,
+    "event": 1,
+    "job_position": 1,
+    "persona": 1,
+    "screening_mode": 1,
+    "gender": 1,
+    "marital_status": 1,
+    "referred_by": 1,
+    "city": 1,
+    "experience_level": 1,
+    "education_level": 1,
+    "reason_for_change": 1
+}
+
+    GET-http://localhost:8000/v1/candidates-list/
+
+    It will give all the records if pk id is not given.
+    [
+    {
+        "id": 2,
+        "recruiter_alert": "Example Recruiter Alert",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "johndoe@example.com",
+        "role": 1,
+        "dob": "1990-01-01",
+        "contact_no_primary": "1234567890",
+        "contact_no_alternate": "9876543210",
+        "referred_by_other": "Someone",
+        "address_line": "123 Main St",
+        "pincode": "123456",
+        "notice_period": "30 days",
+        "photo_path": "path/to/photo.jpg",
+        "resume_path": "path/to/resume.pdf",
+        "login_time": "2023-12-14T10:00:00Z",
+        "logout_time": "2023-12-14T18:00:00Z",
+        "ip_address": "192.168.0.1",
+        "geo_location": "Location",
+        "created_date": "2023-12-14T08:00:00Z",
+        "created_by": 1,
+        "modified_date": "2023-12-14T08:30:00Z",
+        "modified_by": 1,
+        "status": 1,
+        "event": 1,
+        "job_position": 1,
+        "persona": 1,
+        "screening_mode": 1,
+        "gender": 1,
+        "marital_status": 1,
+        "referred_by": 1,
+        "city": 1,
+        "experience_level": 1,
+        "education_level": 1,
+        "reason_for_change": 1
+    },
+    {
+        "id": 3,
+        "recruiter_alert": "Example Recruiter Alert",
+        "first_name": "John",
+        "last_name": null,
+        "email": "johndoe@example.com",
+        "role": 1,
+        "dob": "1990-01-01",
+        "contact_no_primary": "1234567890",
+        "contact_no_alternate": "9876543210",
+        "referred_by_other": "Someone",
+        "address_line": "123 Main St",
+        "pincode": "123456",
+        "notice_period": "30 days",
+        "photo_path": "path/to/photo.jpg",
+        "resume_path": "path/to/resume.pdf",
+        "login_time": "2023-12-14T10:00:00Z",
+        "logout_time": "2023-12-14T18:00:00Z",
+        "ip_address": "192.168.0.1",
+        "geo_location": "Location",
+        "created_date": "2023-12-14T08:00:00Z",
+        "created_by": 1,
+        "modified_date": "2023-12-14T08:30:00Z",
+        "modified_by": 1,
+        "status": 1,
+        "event": 1,
+        "job_position": 1,
+        "persona": 1,
+        "screening_mode": 1,
+        "gender": 1,
+        "marital_status": 1,
+        "referred_by": 1,
+        "city": 1,
+        "experience_level": 1,
+        "education_level": 1,
+        "reason_for_change": 1
+    }
+]
+
+API-3-DELETE-http://localhost:8000/v1/candidates/delete/1/
+
+    Input1-1-http://localhost:8000/v1/candidates/delete/1/  
+    Output-2
+    {
+    "status": "Success",
+    "message": "Record with ID 1 deleted successfully."
+    }
+
+    Input1-2-http://localhost:8000/v1/candidates/delete/2/
+    {
+    "status": "Error",
+    "message": "Record with ID 2 does not exist."
+    }
+
+API-4-PUT-http://localhost:8000/v1/candidates-update/2/
+    Input-1-{
+        "last_name": "Joe"
+    }
+    Output-1
+        {
+        "id": 3,
+        "recruiter_alert": "Example Recruiter Alert",
+        "first_name": "John",
+        "last_name": doe,
+        "email": "johndoe@example.com",
+        "role": 1,
+        "dob": "1990-01-01",
+        "contact_no_primary": "1234567890",
+        "contact_no_alternate": "9876543210",
+        "referred_by_other": "Someone",
+        "address_line": "123 Main St",
+        "pincode": "123456",
+        "notice_period": "30 days",
+        "photo_path": "path/to/photo.jpg",
+        "resume_path": "path/to/resume.pdf",
+        "login_time": "2023-12-14T10:00:00Z",
+        "logout_time": "2023-12-14T18:00:00Z",
+        "ip_address": "192.168.0.1",
+        "geo_location": "Location",
+        "created_date": "2023-12-14T08:00:00Z",
+        "created_by": 1,
+        "modified_date": "2023-12-14T08:30:00Z",
+        "modified_by": 1,
+        "status": 1,
+        "event": 1,
+        "job_position": 1,
+        "persona": 1,
+        "screening_mode": 1,
+        "gender": 1,
+        "marital_status": 1,
+        "referred_by": 1,
+        "city": 1,
+        "experience_level": 1,
+        "education_level": 1,
+        "reason_for_change": 1
+    }
+    Input-2-{
+        "last_name": "Joe"
+    }
+    Output-2
+        {
+            "status": false,
+            "message": "Error: Unsupported media type \"text/plain\" in request."
+        }
