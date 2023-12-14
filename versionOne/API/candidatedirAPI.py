@@ -21,9 +21,9 @@ class CandidateCreateAPIView(APIView):
         
 
 class CandidateUpdateAPIView(APIView):
-    def put(self, request, pk):
+    def put(self, request, id):
         try:
-            candidate = CandidateDirectory.objects.get(pk=pk)
+            candidate = CandidateDirectory.objects.get(id=id)
             serializer = CandidatedirectorySerializer(candidate, data=request.data)
             
             if serializer.is_valid():
@@ -32,7 +32,7 @@ class CandidateUpdateAPIView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
         except CandidateDirectory.DoesNotExist:
-            return Response({"status": False, "message": f"Record with ID {pk} does not exist."}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"status": False, "message": f"Record with ID {id} does not exist."}, status=status.HTTP_404_NOT_FOUND)
         
         except Exception as e:
             return Response({"status": False, "message": f"Error: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)        
