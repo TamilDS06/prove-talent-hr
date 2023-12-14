@@ -8,7 +8,7 @@ from versionOne.API.Serializer import CandidatedirectorySerializer
 from versionOne.models import CandidateDirectory
 
 class CandidateCreateAPIView(APIView):
-    def post(self, request, format=None):
+    def post(self, request):
         try:
             serializer = CandidatedirectorySerializer(data=request.data)
             if serializer.is_valid():
@@ -21,7 +21,7 @@ class CandidateCreateAPIView(APIView):
         
 
 class CandidateUpdateAPIView(APIView):
-    def put(self, request, pk, format=None):
+    def put(self, request, pk):
         try:
             candidate = CandidateDirectory.objects.get(pk=pk)
             serializer = CandidatedirectorySerializer(candidate, data=request.data)
@@ -39,7 +39,7 @@ class CandidateUpdateAPIView(APIView):
 
 
 class CandidateListRetrieveAPIView(APIView):
-    def get(self, request, pk=None, format=None):
+    def get(self, request, pk=None):
         if pk is not None:  # If primary key is provided, return specific record
             try:
                 candidate = CandidateDirectory.objects.get(pk=pk)
@@ -59,7 +59,7 @@ class CandidateListRetrieveAPIView(APIView):
             
 
 class CandidateDeleteAPIView(APIView):
-    def delete(self, request, pk, format=None):
+    def delete(self, request, pk):
         try:
             candidate = CandidateDirectory.objects.get(pk=pk)
             candidate.delete()
