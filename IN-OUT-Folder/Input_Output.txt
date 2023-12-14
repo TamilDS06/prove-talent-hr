@@ -122,7 +122,7 @@ Input-2
     }
 
 
-API-2-PUT-http://localhost:8000/v1/candidates-update/2/
+API-2-GET-http://localhost:8000/v1/candidates-retrive/2/
     It will give all pk-2 record
     Output-1
         {
